@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title> INST377 - JS practice </title>
+    </head>
+
+    <body>
+        
+        <button onclick="changeBackgroundColor()" > change color  </button>
+
+        <!--Javascript code-->
+        <script type="text/javascript">
+            function changeBackgroundColor() {
+                console.log("attempting to change background color, current color is:", document.body.style.backgroundColor);
+                
+                if ( document.body.style.backgroundColor == 'blue') { 
+                    document.body.style.backgroundColor = 'green';
+            } else {
+                document.body.style.backgroundColor = 'blue';
+            }
+
+
+
+
+        
+                console.log("Successfully change color of text, new color is:", document.body.style.changeBackgroundColor)
+            }
+
+            
+        </script>
+    </body>
+</html>
