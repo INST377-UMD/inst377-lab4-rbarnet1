@@ -1,0 +1,111 @@
+<html>
+    <head> 
+        <title> INST377 - Form Validation</title>
+        <link rel="stylesheet" href="INST377 - week 4- Javascript.css">
+    </head>
+
+    <body> 
+        <h1> INST377 - Lab 4 </h1>
+
+ <!--main text area-->
+<div class="main-container">
+    <div class="content-area">
+        <div class="content-box">
+            <form name="contactform" onclick="return formValidation()" >
+                <label for="firstname"> First Name: </label>
+                <input type="text" placeholder="John" id="firstname">
+                <button onclick="formValidation()"> Alert Me</button>
+
+
+            </form>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <div class="content-area">
+            <div class="content-box">
+                <button onclick="changeBackgroundColor()" > change color  </button>
+
+        <!--Javascript code-->
+        <script type="text/javascript">
+            function changeBackgroundColor() {
+                console.log("attempting to change background color, current color is:", document.body.style.backgroundColor);
+                
+                if ( document.body.style.backgroundColor == 'blue') { 
+                    document.body.style.backgroundColor = 'green';
+            } else {
+                document.body.style.backgroundColor = 'blue';
+            }
+
+
+
+
+        
+                console.log("Successfully change color of text, new color is:", document.body.style.changeBackgroundColor)
+            }
+
+            
+        </script>
+            </div>
+        </div>
+
+
+        <div class="main-container">
+            <div class="content-area">
+                <div class="content-box">
+                    <form name="textform" onclick="return textvalidation()" >
+                        <label for="usertext"> Enter text: </label>
+                        <input type="text" placeholder="usertext" id="usertext">
+                        <button onclick="textvalidation()"> Validate text</button>
+        
+        
+                    </form>
+                    <!--Javascript code-->
+                    <script type="text/javascript">
+                        function textvalidation() {
+                            const userinput= document.textform.usertext.value;
+                            var validation = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+
+                            if (validation.textvalidation(userinput)) { // remove any white space and check if empty
+                                alert("No special characters allowed");
+                        
+                                return false;
+                            
+                            
+                        }
+                    
+                    </script>
+                </div>
+            </div>
+
+
+            <div class="main-container">
+                <div class="content-area">
+                    <div class="content-box">
+        
+                        <button onclick="addText()"> Add text</button>
+                        
+                    </div>
+                </div>
+
+
+
+<!--Javascript code-->
+<script type="text/javascript">
+    function formValidation() {
+        console.log("validating user input:", document.contactform.firstname.value)
+        const validationRegex = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+
+        if (document.contactform.firstname.value.trim() == "") { // remobe any white space and check if empty
+            alert("Hi Name!");
+            
+            return false;
+        }
+    
+    
+        
+    }
+
+</script>
+    </body>
+</html>     
